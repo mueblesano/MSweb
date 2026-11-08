@@ -19,6 +19,19 @@ addEventListener('keydown', event => {
   if (event.key === 'Escape') setMenuOpen(false);
 });
 
+function updatePageView() {
+  const hash = location.hash.slice(1);
+  const categoryId = /^categoria-(coc|clo|ban|com|ins|esp)$/.test(hash) ? hash : '';
+  const projectsOpen = hash === 'proyectos' || Boolean(categoryId);
+  document.body.classList.toggle('projects-view', projectsOpen);
+  document.dispatchEvent(new CustomEvent('project:navigate', {
+    detail: { categoryId }
+  }));
+}
+
+addEventListener('hashchange', updatePageView);
+updatePageView();
+
 const slides = [...document.querySelectorAll('.sl')];
 let actual = 0;
 setInterval(() => {
