@@ -1,0 +1,157 @@
+{
+  "categorias": {
+    "all": "Todos",
+    "coc": "Cocinas",
+    "clo": "Clósets",
+    "ban": "Baños",
+    "com": "Comercial",
+    "ins": "Institucional",
+    "esp": "Especiales"
+  },
+  "proyectos": [
+    {
+      "id": 1,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "coc",
+      "titulo": "Cocina",
+      "alt": "Cocina con isla roja",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/01-coc.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "clo",
+      "titulo": "Clóset",
+      "alt": "Clóset con cajonera",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/02-clo.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "com",
+      "titulo": "Mobiliario comercial",
+      "alt": "Oficina con escritorios a medida",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/03-com.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "coc",
+      "titulo": "Cocina",
+      "alt": "Cocina amplia con isla",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/04-coc.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "ins",
+      "titulo": "Mobiliario institucional",
+      "alt": "Sala de computación con mesón a medida",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/05-ins.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "esp",
+      "titulo": "Proyecto especial",
+      "alt": "Vitrina iluminada",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/06-esp.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "clo",
+      "titulo": "Clóset",
+      "alt": "Clóset interior con colgadores",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/07-clo.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "coc",
+      "titulo": "Cocina",
+      "alt": "Cocina con península",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/08-coc.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "com",
+      "titulo": "Mobiliario comercial",
+      "alt": "Oficina con muebles azules y blancos",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/09-com.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "esp",
+      "titulo": "Proyecto especial",
+      "alt": "Mueble esquinero",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/10-esp.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "clo",
+      "titulo": "Clóset",
+      "alt": "Clóset bajo mansarda",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/11-clo.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "ins",
+      "titulo": "Mobiliario institucional",
+      "alt": "Laboratorio con mesones azules",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/proyectos/12-ins.jpg"
+    }
+  ]
+}
