@@ -251,7 +251,7 @@ section {
 }
 #nosotros .im img {
   height: 100%;
-  min-height: 520px;
+  min-height: 0;
 }
 .txt p {
   color: var(--mut);
