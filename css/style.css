@@ -43,15 +43,14 @@ body.projects-view > :not(header):not(#proyectos):not(#lb):not(.whatsapp-float):
 h1,
 h2,
 h3 {
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 h2,
 .project-title {
-  font-size: clamp(26px, 3.6vw, 42px);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  line-height: 1.25;
+  font-size: clamp(30px, 3.8vw, 46px);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
 }
 .serif {
   font-family: "Libre Baskerville", serif;
@@ -91,7 +90,7 @@ header.s {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.12em;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -107,7 +106,7 @@ nav {
 nav a {
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 nav a:hover {
@@ -119,7 +118,7 @@ nav a:hover {
   border: 1px solid currentColor;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   background: none;
   color: inherit;
@@ -153,11 +152,10 @@ nav a:hover {
 }
 .hero {
   position: relative;
-  height: 100svh;
-  min-height: 560px;
+  height: min(84svh, 860px);
+  min-height: 600px;
   display: grid;
   place-items: center;
-  text-align: center;
   color: #fff;
   overflow: hidden;
 }
@@ -165,7 +163,7 @@ nav a:hover {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: 58% center;
   opacity: 0;
   transition: opacity 1.6s;
 }
@@ -178,35 +176,99 @@ nav a:hover {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.52) 0%,
-    rgba(0, 0, 0, 0.34) 48%,
-    rgba(0, 0, 0, 0) 78%
+    rgba(0, 0, 0, 0.64) 0%,
+    rgba(0, 0, 0, 0.42) 42%,
+    rgba(0, 0, 0, 0.08) 76%
   );
 }
 .hero div.c {
   position: relative;
   z-index: 2;
-  width: 50%;
-  padding: 0 2vw 0 6vw;
+  width: 40%;
+  padding: 0 0 0 6vw;
   justify-self: start;
   text-align: left;
 }
 .hero h1 {
-  font-size: clamp(34px, 5vw, 64px);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  line-height: 1.15;
+  max-width: 560px;
+  font-size: clamp(38px, 4.2vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 .hero p {
-  margin: 22px 0 34px;
-  max-width: 620px;
-  font-size: 18px;
+  margin: 20px 0 30px;
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.55;
 }
 .hero .b {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+.hero .btn {
+  padding: 13px 20px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.hero-controls {
+  position: absolute;
+  z-index: 3;
+  right: 6vw;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-arrow,
+.hero-dot {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+.hero-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font: 300 27px/1 Jost, sans-serif;
+}
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+}
+.hero-dot.on {
+  background: #fff;
+}
+.hero-arrow:hover,
+.hero-dot:hover {
+  background: var(--g);
+  border-color: var(--g);
+}
+.hero-arrow:focus-visible,
+.hero-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .sl {
+    transition: none;
+  }
 }
 .strip {
   display: grid;
@@ -217,8 +279,7 @@ nav a:hover {
 }
 .strip div {
   padding: 26px 14px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   font-size: 13px;
   border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -269,7 +330,7 @@ section {
 }
 .mv h3 {
   font-size: 14px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--g);
   margin-bottom: 6px;
@@ -288,8 +349,8 @@ section {
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 .card {
   display: block;
@@ -298,30 +359,143 @@ section {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(34, 34, 34, 0.06);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.card.featured {
+  grid-column: span 2;
 }
 .card .ph {
-  height: 260px;
-  background: var(--line) center/cover;
+  height: 180px;
+  overflow: hidden;
+  background: var(--line);
+}
+.card.featured .ph {
+  height: 300px;
+}
+.card .ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(34, 34, 34, 0.14);
+}
+.card:hover .ph img,
+.card:focus-visible .ph img {
+  transform: scale(1.055);
+}
+.card .brand-composition {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 22px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 78% 28%, rgba(255, 255, 255, 0.12) 0 16%, transparent 16.5%),
+    linear-gradient(135deg, #263b25 0%, #45623c 54%, #78926a 100%);
+}
+.brand-composition::before,
+.brand-composition::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+.brand-composition::before {
+  inset: 14px;
+}
+.brand-composition::after {
+  width: 44%;
+  height: 68%;
+  right: 24px;
+  top: 16%;
+  border-width: 1px 1px 0 0;
+  transform: skewY(-12deg);
+}
+.brand-composition-mark {
+  position: relative;
+  z-index: 1;
+  font: 400 clamp(44px, 6vw, 76px)/1 "Libre Baskerville", serif;
+  letter-spacing: -0.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.brand-composition-caption {
+  position: relative;
+  z-index: 1;
   display: grid;
-  place-items: center;
-  color: var(--mut);
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  gap: 2px;
+  text-align: right;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.brand-composition-caption small {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
 }
 .card div.t {
-  padding: 22px 24px 28px;
+  padding: 18px 20px 22px;
+}
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
 }
 .card h3 {
   font-size: 19px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.card.featured h3 {
+  font-size: clamp(22px, 2.2vw, 28px);
+}
+.card-arrow {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--gd);
+  font-size: 17px;
+  line-height: 1;
+  transition:
+    color 0.25s,
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+}
+.card:hover .card-arrow,
+.card:focus-visible .card-arrow {
+  color: #fff;
+  background: var(--g);
+  border-color: var(--g);
+  transform: translate(2px, -2px);
 }
 .card p {
   margin: 0;
   font-size: 15px;
   color: var(--mut);
+  line-height: 1.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card .ph img,
+  .card-arrow {
+    transition: none;
+  }
 }
 .tech {
   background: var(--gd);
@@ -350,8 +524,8 @@ section {
 }
 .tech h3 {
   font-size: 16px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0;
   margin-bottom: 8px;
   color: #fff;
 }
@@ -374,7 +548,7 @@ section {
   color: var(--mut);
   font: inherit;
   font-size: 13px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
   padding: 6px 0;
@@ -414,7 +588,7 @@ section {
   padding: 30px 16px 12px;
   color: #fff;
   font-size: 13px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
   opacity: 0;
@@ -456,10 +630,9 @@ section {
   padding-top: 18px;
 }
 .steps b {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 15px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   display: block;
   margin: 8px 0;
 }
@@ -473,7 +646,7 @@ section {
   font-style: normal;
   color: var(--g);
   font-size: 13px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.06em;
 }
 .hl {
   margin-top: 54px;
@@ -539,7 +712,7 @@ footer {
   margin: 0 0 10px;
   font-weight: 400;
   font-size: 13px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--g);
 }
@@ -649,8 +822,8 @@ footer {
 }
 @media (max-width: 900px) {
   .hero div.c {
-    width: 70%;
-    padding-right: 4vw;
+    width: 58%;
+    padding-right: 3vw;
   }
   #nv {
     position: fixed;
@@ -691,7 +864,7 @@ footer {
   }
   #nv .drawer-head .brand {
     gap: 8px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     font-size: 12px;
     white-space: nowrap;
     padding: 0;
@@ -738,10 +911,16 @@ footer {
     display: block;
   }
   .strip,
-  .cards,
   .steps,
   .fc {
     grid-template-columns: 1fr 1fr;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .card.featured .ph {
+    height: 240px;
   }
   .split,
   .mv,
@@ -768,20 +947,59 @@ footer {
 }
 @media (max-width: 560px) {
   .hero:after {
-    background: rgba(0, 0, 0, 0.45);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+  .hero {
+    height: min(82svh, 760px);
+    min-height: 640px;
+  }
+  .hero .sl {
+    background-position: 65% center;
   }
   .hero div.c {
     width: 100%;
-    padding: 0 7vw;
+    padding: 0 7vw 45px;
   }
   .hero h1 {
-    font-size: clamp(34px, 9vw, 48px);
+    max-width: 420px;
+    font-size: clamp(36px, 9vw, 46px);
   }
-  .cards,
+  .hero p {
+    max-width: 360px;
+    margin: 18px 0 24px;
+  }
+  .hero .b {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hero-controls {
+    right: auto;
+    left: 7vw;
+    bottom: 20px;
+  }
+  .hero-arrow {
+    width: 36px;
+    height: 36px;
+  }
   .steps,
   .fc,
   .strip {
     grid-template-columns: 1fr;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card.featured {
+    grid-column: auto;
+  }
+  .card .ph,
+  .card.featured .ph {
+    height: 220px;
   }
   .gal {
     columns: 1;

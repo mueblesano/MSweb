@@ -33,9 +33,42 @@ addEventListener('hashchange', updatePageView);
 updatePageView();
 
 const slides = [...document.querySelectorAll('.sl')];
+const slideButtons = [...document.querySelectorAll('.hero-dot')];
+const previousSlide = document.querySelector('[data-carousel-prev]');
+const nextSlide = document.querySelector('[data-carousel-next]');
 let actual = 0;
-setInterval(() => {
+let carouselTimer;
+
+function showSlide(index) {
   slides[actual].classList.remove('on');
-  actual = (actual + 1) % slides.length;
+  actual = (index + slides.length) % slides.length;
   slides[actual].classList.add('on');
-}, 5500);
+  slideButtons.forEach((button, buttonIndex) => {
+    const isActive = buttonIndex === actual;
+    button.classList.toggle('on', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function restartCarousel() {
+  clearInterval(carouselTimer);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    carouselTimer = setInterval(() => showSlide(actual + 1), 5500);
+  }
+}
+
+previousSlide.addEventListener('click', () => {
+  showSlide(actual - 1);
+  restartCarousel();
+});
+nextSlide.addEventListener('click', () => {
+  showSlide(actual + 1);
+  restartCarousel();
+});
+slideButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    showSlide(index);
+    restartCarousel();
+  });
+});
+restartCarousel();

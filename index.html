@@ -133,36 +133,52 @@
       </nav>
     </header>
 
-    <div class="hero" id="inicio">
+    <div
+      class="hero"
+      id="inicio"
+      role="region"
+      aria-label="Proyectos destacados"
+      aria-roledescription="carrusel"
+    >
       <div
         class="sl on"
+        aria-hidden="true"
         style="background-image: url(img/portada/escritorio-esquinero-mansarda-cajonera-ventana.webp)"
       ></div>
       <div
         class="sl"
+        aria-hidden="true"
         style="background-image: url(img/portada/oficina-puestos-trabajo-melamina-madera-gris-sillas.webp)"
       ></div>
       <div
         class="sl"
+        aria-hidden="true"
         style="background-image: url(img/portada/laboratorio-mueble-clinico-cajones-lavamanos-gris.webp)"
       ></div>
       <div class="c">
-        <h1>Diseñamos espacios. Fabricamos soluciones.</h1>
+        <h1>Soluciones a medida que transforman tu forma de vivir.</h1>
         <p>
-          Diseño y fabricación de mobiliario a medida para hogares, empresas e
-          instituciones. Funcionalidad, estética y una cuidadosa selección de
-          materiales.
+          Diseño y fabricación de muebles a medida para espacios que hablan de
+          ti.
         </p>
         <div class="b">
-          <a class="btn" href="#proyectos">Conoce nuestros proyectos</a
-          ><a
+          <a
             class="btn f"
             href="https://wa.me/56992756229?text=Hola%2C%20quiero%20solicitar%20una%20visita%20t%C3%A9cnica%20gratuita"
             target="_blank"
             rel="noopener"
-            >Solicita tu visita técnica gratuita</a
-          >
+            >Solicita una visita</a
+          ><a class="btn" href="#proyectos">Ver proyectos</a>
         </div>
+      </div>
+      <div class="hero-controls" role="group" aria-label="Controles de fotografías">
+        <button class="hero-arrow" type="button" data-carousel-prev aria-label="Fotografía anterior">‹</button>
+        <div class="hero-dots" role="group" aria-label="Elegir fotografía">
+          <button class="hero-dot on" type="button" data-slide="0" aria-label="Mostrar fotografía 1" aria-pressed="true"></button>
+          <button class="hero-dot" type="button" data-slide="1" aria-label="Mostrar fotografía 2" aria-pressed="false"></button>
+          <button class="hero-dot" type="button" data-slide="2" aria-label="Mostrar fotografía 3" aria-pressed="false"></button>
+        </div>
+        <button class="hero-arrow" type="button" data-carousel-next aria-label="Fotografía siguiente">›</button>
       </div>
     </div>
     <div class="strip">
@@ -214,72 +230,77 @@
           y aportan una identidad visual coherente con el entorno.
         </p>
         <div class="cards">
-          <a class="card" href="#categoria-coc">
-            <div
-              class="ph"
-              style="background-image: url(img/servicios/cocinas.jpg)"
-            ></div>
+          <a class="card featured" href="#categoria-coc">
+            <div class="ph">
+              <img src="img/servicios/cocinas.jpg" alt="Cocina a medida" loading="lazy" />
+            </div>
             <div class="t">
-              <h3>Cocinas</h3>
-              <p>
-                Almacenamiento y distribución según dimensiones, circulación y
-                estilo.
-              </p>
+              <div class="card-heading">
+                <h3>Cocinas</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Diseño funcional para el corazón de tu hogar.</p>
             </div>
           </a>
-          <a class="card" href="#categoria-clo">
-            <div
-              class="ph"
-              style="background-image: url(img/servicios/closets.jpg)"
-            ></div>
+          <a class="card featured" href="#categoria-clo">
+            <div class="ph">
+              <img src="img/servicios/closets.jpg" alt="Clóset a medida" loading="lazy" />
+            </div>
             <div class="t">
-              <h3>Clósets y almacenamiento</h3>
-              <p>
-                Distribuciones interiores y terminaciones acordes a cada
-                ambiente.
-              </p>
+              <div class="card-heading">
+                <h3>Clósets y almacenamiento</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Cada cosa en su lugar, con un diseño hecho para ti.</p>
             </div>
           </a>
           <a class="card" href="#categoria-ban">
-            <div class="ph">Foto pendiente</div>
+            <div class="ph brand-composition" role="img" aria-label="Composición gráfica de Mueble Sano">
+              <span class="brand-composition-mark" aria-hidden="true">MS</span>
+              <span class="brand-composition-caption">Mueble Sano<small>Diseño a medida</small></span>
+            </div>
             <div class="t">
-              <h3>Muebles de baño</h3>
-              <p>
-                Aprovechamiento del espacio y materiales apropiados para el uso.
-              </p>
+              <div class="card-heading">
+                <h3>Muebles de baño</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Soluciones prácticas para tus espacios de baño.</p>
             </div>
           </a>
           <a class="card" href="#categoria-com">
-            <div
-              class="ph"
-              style="background-image: url(img/servicios/comercial.jpg)"
-            ></div>
+            <div class="ph">
+              <img src="img/servicios/comercial.jpg" alt="Mobiliario para espacios comerciales" loading="lazy" />
+            </div>
             <div class="t">
-              <h3>Mobiliario comercial</h3>
-              <p>Oficinas, comercios y espacios de atención.</p>
+              <div class="card-heading">
+                <h3>Mobiliario comercial</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Espacios de trabajo y atención que reciben mejor.</p>
             </div>
           </a>
           <a class="card" href="#categoria-ins">
-            <div
-              class="ph"
-              style="background-image: url(img/servicios/institucional.jpg)"
-            ></div>
+            <div class="ph">
+              <img src="img/servicios/institucional.jpg" alt="Mobiliario para espacios institucionales" loading="lazy" />
+            </div>
             <div class="t">
-              <h3>Mobiliario institucional</h3>
-              <p>
-                Equipamiento para espacios educativos, de salud y otras
-                instituciones.
-              </p>
+              <div class="card-heading">
+                <h3>Mobiliario institucional</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Equipamiento pensado para cada comunidad.</p>
             </div>
           </a>
           <a class="card" href="#categoria-esp">
-            <div
-              class="ph"
-              style="background-image: url(img/servicios/especiales.jpg)"
-            ></div>
+            <div class="ph">
+              <img src="img/servicios/especiales.jpg" alt="Proyecto de mobiliario especial" loading="lazy" />
+            </div>
             <div class="t">
-              <h3>Proyectos especiales</h3>
-              <p>¿Una idea fuera de lo tradicional? Evaluamos tu proyecto.</p>
+              <div class="card-heading">
+                <h3>Proyectos especiales</h3>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p>Ideas únicas, diseñadas y fabricadas a tu medida.</p>
             </div>
           </a>
         </div>
