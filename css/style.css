@@ -1034,3 +1034,68 @@ footer {
     transition: none;
   }
 }
+.materiales-antimicrobianos,
+.materiales-details {
+  max-width: 900px;
+  margin: 42px auto 0;
+  text-align: left;
+}
+.materiales-title {
+  margin-top: 54px;
+  color: #fff;
+  text-align: center;
+}
+.tech .materiales-groups {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+.materiales-card {
+  padding: 26px 24px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--mut);
+  text-align: left;
+}
+.tech .materiales-card h3 {
+  color: var(--gd);
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.materiales-card h3 {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.materiales-groups ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+.materiales-groups li::marker {
+  color: var(--g);
+}
+.materiales-groups li {
+  margin-bottom: 14px;
+}
+.materiales-groups strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.materiales-details {
+  margin-top: 32px;
+}
+.materiales-details p,
+.materiales-antimicrobianos p {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .tech .materiales-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .tech .materiales-groups {
+    grid-template-columns: 1fr;
+  }
+}
