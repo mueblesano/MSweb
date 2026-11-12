@@ -62,7 +62,7 @@ Pasos:
 - Las 48 fotos vienen con nombres de Facebook; renombrar con nombres descriptivos (`cocina-isla-blanca.jpg`).
 - Exportar en WebP o JPEG de 1600 px (portada) y 900 px (galería), y añadir `loading="lazy"` en las que están bajo la portada.
 - La maqueta usa 22 de las 48. El resto sirve para completar el portafolio.
-- **No hay ninguna foto de baño**: la tarjeta "Muebles de baño" y su filtro quedan marcados como pendientes.
+- La categoría **Baños** está disponible en Servicios y en el filtro de Proyectos, con fotos en `img/nuevas/`.
 - Pedir autorización antes de publicar fotos donde se vea a personas o que identifiquen al cliente.
 
 ## 7. Datos pendientes (no inventar)

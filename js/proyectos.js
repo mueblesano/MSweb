@@ -20,7 +20,7 @@ function selectCategory(category) {
 }
 
 function syncCategoryFromHash({ scroll = false } = {}) {
-  const match = /^#categoria-(coc|clo|com|ins|esp)$/.exec(location.hash);
+  const match = /^#categoria-(coc|clo|com|ins|esp|ban)$/.exec(location.hash);
   if (!match) return;
   const category = match[1];
   selectCategory(category);

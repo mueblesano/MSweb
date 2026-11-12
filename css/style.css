@@ -486,12 +486,12 @@ section {
   border-color: var(--g);
 }
 .gal {
-  columns: 3;
-  column-gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 .gal figure {
-  margin: 0 0 14px;
-  break-inside: avoid;
+  margin: 0;
   position: relative;
   cursor: zoom-in;
   overflow: hidden;
@@ -864,7 +864,7 @@ footer {
     min-height: 0;
   }
   .gal {
-    columns: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   section {
     padding: 80px 6vw;
@@ -927,7 +927,7 @@ footer {
     height: 220px;
   }
   .gal {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 }
 .drawer-head {
@@ -944,5 +944,93 @@ footer {
     color: var(--mut);
     font-size: 12px;
     line-height: 1.5;
+  }
+}
+.render-section {
+  scroll-margin-top: 70px;
+}
+.render-eyebrow {
+  margin: 0 0 12px;
+  color: var(--g);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.render-intro {
+  max-width: 820px;
+  margin: 22px auto 30px;
+  color: var(--mut);
+  text-align: center;
+}
+.render-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 30px;
+  margin: 0 auto 46px;
+  padding: 0;
+  list-style: none;
+}
+.render-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+}
+.render-highlights li::before {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--g);
+  content: "";
+}
+.render-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.render-item {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--bg);
+}
+.render-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.render-item:hover .render-image {
+  transform: scale(1.04);
+}
+.render-caption {
+  padding: 12px 16px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .render-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .render-gallery {
+    grid-template-columns: 1fr;
+  }
+  .render-highlights {
+    align-items: flex-start;
+    flex-direction: column;
+    width: fit-content;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .render-image {
+    transition: none;
   }
 }

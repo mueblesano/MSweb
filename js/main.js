@@ -21,7 +21,7 @@ addEventListener('keydown', event => {
 
 function updatePageView() {
   const hash = location.hash.slice(1);
-  const categoryId = /^categoria-(coc|clo|com|ins|esp)$/.test(hash) ? hash : '';
+  const categoryId = /^categoria-(coc|clo|com|ins|esp|ban)$/.test(hash) ? hash : '';
   const projectsOpen = hash === 'proyectos' || Boolean(categoryId);
   document.body.classList.toggle('projects-view', projectsOpen);
   document.dispatchEvent(new CustomEvent('project:navigate', {
