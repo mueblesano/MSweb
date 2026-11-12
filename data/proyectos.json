@@ -356,6 +356,66 @@
       "descripcion": "[Necesidad del cliente y solución desarrollada]",
       "materiales": "[Materiales confirmados]",
       "foto": "img/nuevas/especiales-07-mueble-tv-living-repisas-flotantes-vitrina.webp"
+    },
+    {
+      "id": 30,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "coc",
+      "titulo": "Cocina con desayunador",
+      "alt": "Cocina de melamina clara con cubierta oscura y desayunador",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/portada/cocina-desayunador-melamina-clara-cubierta-chocolate.webp"
+    },
+    {
+      "id": 31,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "esp",
+      "titulo": "Escritorio esquinero",
+      "alt": "Escritorio esquinero a medida con cajonera junto a una ventana",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/portada/escritorio-esquinero-mansarda-cajonera-ventana.webp"
+    },
+    {
+      "id": 32,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "ins",
+      "titulo": "Mobiliario para laboratorio",
+      "alt": "Muebles clínicos de laboratorio con cajones y lavamanos",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/portada/laboratorio-mueble-clinico-cajones-lavamanos-gris.webp"
+    },
+    {
+      "id": 33,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "esp",
+      "titulo": "Mueble bajo para dormitorio",
+      "alt": "Mueble bajo gris con cajones y puertas en dormitorio",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/portada/mueble-bajo-gris-cajones-puertas-habitacion.webp"
+    },
+    {
+      "id": 34,
+      "nombre": "[Nombre del proyecto]",
+      "categoria": "com",
+      "titulo": "Puestos de trabajo para oficina",
+      "alt": "Puestos de trabajo de melamina con separadores, cajoneras y sillas",
+      "ubicacion": "[Comuna, si hay autorización]",
+      "fecha": "[Mes y año verificados]",
+      "descripcion": "[Necesidad del cliente y solución desarrollada]",
+      "materiales": "[Materiales confirmados]",
+      "foto": "img/portada/oficina-puestos-trabajo-melamina-madera-gris-sillas.webp"
     }
   ]
 }
