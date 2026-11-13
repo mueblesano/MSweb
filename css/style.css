@@ -885,6 +885,31 @@ footer {
   }
 }
 @media (max-width: 560px) {
+  #proceso {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  #proceso .steps {
+    gap: 10px;
+    margin-top: 24px;
+  }
+  #proceso .steps div {
+    padding-top: 8px;
+  }
+  #proceso .steps i {
+    display: inline-block;
+    margin-right: 8px;
+  }
+  #proceso .steps b {
+    display: inline;
+    margin: 0;
+    font-size: 14px;
+  }
+  #proceso .steps p {
+    margin-top: 3px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
   .hero:after {
     background: linear-gradient(
       90deg,
