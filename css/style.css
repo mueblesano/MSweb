@@ -1160,13 +1160,16 @@ footer {
   border-radius: 8px;
   background: var(--soft);
   color: var(--mut);
+  font-size: 16px;
   text-align: left;
 }
 .tech .materiales-card h3 {
-  color: var(--gd);
+  color: var(--g);
   font-family: "Libre Baskerville", serif;
   font-style: italic;
   font-weight: 400;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
 }
 .materiales-card h3 {
   padding-bottom: 12px;
