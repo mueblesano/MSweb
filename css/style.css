@@ -317,6 +317,28 @@ section {
 }
 #nosotros .split {
   align-items: stretch;
+  grid-template-areas:
+    "image heading"
+    "image content";
+  grid-template-rows: auto 1fr;
+  row-gap: 0;
+}
+#nosotros .im {
+  grid-area: image;
+}
+#nosotros .about-heading {
+  grid-area: heading;
+}
+#nosotros .about-heading h2 {
+  margin-bottom: 26px;
+}
+#nosotros .about-heading p {
+  color: var(--ink);
+  font-size: 16px;
+  margin: 0 0 22px;
+}
+#nosotros .txt {
+  grid-area: content;
 }
 .split.r .im {
   order: 2;
@@ -889,6 +911,16 @@ footer {
   .tech .cols,
   form {
     grid-template-columns: 1fr;
+  }
+  #nosotros .split {
+    grid-template-areas:
+      "heading"
+      "image"
+      "content";
+    grid-template-rows: auto;
+  }
+  #nosotros .txt {
+    padding-top: 24px;
   }
   .split.r .im {
     order: 0;
