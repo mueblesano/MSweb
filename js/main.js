@@ -72,3 +72,54 @@ slideButtons.forEach((button, index) => {
   });
 });
 restartCarousel();
+
+const renderSlides = [...document.querySelectorAll('.render-item')];
+const renderSlideButtons = [...document.querySelectorAll('.render-dot')];
+const previousRenderSlide = document.querySelector('[data-render-prev]');
+const nextRenderSlide = document.querySelector('[data-render-next]');
+const mobileRenderCarousel = window.matchMedia('(max-width: 900px)');
+let actualRender = 0;
+let renderCarouselTimer;
+
+function showRenderSlide(index) {
+  renderSlides[actualRender].classList.remove('on');
+  renderSlides[actualRender].setAttribute('aria-hidden', 'true');
+  actualRender = (index + renderSlides.length) % renderSlides.length;
+  renderSlides[actualRender].classList.add('on');
+  renderSlides[actualRender].setAttribute('aria-hidden', 'false');
+  renderSlideButtons.forEach((button, buttonIndex) => {
+    const isActive = buttonIndex === actualRender;
+    button.classList.toggle('on', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function restartRenderCarousel() {
+  clearInterval(renderCarouselTimer);
+  if (
+    mobileRenderCarousel.matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    renderCarouselTimer = setInterval(
+      () => showRenderSlide(actualRender + 1),
+      5500,
+    );
+  }
+}
+
+previousRenderSlide.addEventListener('click', () => {
+  showRenderSlide(actualRender - 1);
+  restartRenderCarousel();
+});
+nextRenderSlide.addEventListener('click', () => {
+  showRenderSlide(actualRender + 1);
+  restartRenderCarousel();
+});
+renderSlideButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    showRenderSlide(index);
+    restartRenderCarousel();
+  });
+});
+mobileRenderCarousel.addEventListener('change', restartRenderCarousel);
+restartRenderCarousel();

@@ -1142,6 +1142,11 @@ footer {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
+.render-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
 .render-item {
   min-width: 0;
   margin: 0;
@@ -1159,6 +1164,55 @@ footer {
 .render-item:hover .render-image {
   transform: scale(1.04);
 }
+.render-controls {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  right: 14px;
+  align-items: center;
+  gap: 8px;
+}
+.render-arrow,
+.render-dot {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+}
+.render-arrow {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  font: 300 22px/1 Jost, sans-serif;
+}
+.render-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.render-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+}
+.render-dot.on {
+  background: #fff;
+}
+.render-arrow:hover,
+.render-dot:hover {
+  background: var(--g);
+  border-color: var(--g);
+}
+.render-arrow:focus-visible,
+.render-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
 .render-caption {
   padding: 12px 16px;
   font-size: 19px;
@@ -1175,22 +1229,37 @@ footer {
   line-height: 1.5;
   text-transform: none;
 }
-@media (max-width: 900px) {
-  .render-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 @media (max-width: 560px) {
-  .render-gallery {
-    grid-template-columns: 1fr;
-  }
   .render-highlights {
     align-items: flex-start;
     flex-direction: column;
     width: fit-content;
   }
 }
+@media (max-width: 900px) {
+  .render-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .render-item {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.6s,
+      visibility 0.6s;
+  }
+  .render-item.on {
+    opacity: 1;
+    visibility: visible;
+  }
+  .render-controls {
+    display: flex;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
+  .render-item,
   .render-image {
     transition: none;
   }

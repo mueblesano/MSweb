@@ -535,49 +535,105 @@
           <li>Proporciones reales dentro de tu espacio</li>
           <li>Ajustes antes de fabricar</li>
         </ul>
-        <div class="render-gallery">
-          <figure class="render-item">
-            <img
-              class="render-image"
-              src="img/nuevas/renders-02-render-cocina-en-l-melamina-madera.webp"
-              alt="Render 3D de cocina en L con muebles de melamina en tono madera"
-              loading="lazy"
-            />
-            <figcaption class="render-caption">
-              Cocina en L
-              <p class="render-description">
-                Melamina en tono madera y cubierta oscura.
-              </p>
-            </figcaption>
-          </figure>
-          <figure class="render-item">
-            <img
-              class="render-image"
-              src="img/nuevas/renders-03-render-cocina-en-u-granito-negro-peninsula.webp"
-              alt="Render 3D de cocina en U con cubierta negra y península"
-              loading="lazy"
-            />
-            <figcaption class="render-caption">
-              Cocina en U
-              <p class="render-description">
-                Distribución en U con península y cubierta negra.
-              </p>
-            </figcaption>
-          </figure>
-          <figure class="render-item">
-            <img
-              class="render-image"
-              src="img/nuevas/renders-06-render-cocina-isla-central-piso-madera.webp"
-              alt="Render 3D de cocina con isla central, muebles de madera y piso de madera"
-              loading="lazy"
-            />
-            <figcaption class="render-caption">
-              Cocina con isla central
-              <p class="render-description">
-                Muebles en tono madera con isla y piso de madera.
-              </p>
-            </figcaption>
-          </figure>
+        <div
+          class="render-carousel"
+          role="region"
+          aria-label="Visualizaciones de muebles"
+          aria-roledescription="carrusel"
+        >
+          <div class="render-gallery">
+            <figure class="render-item on" aria-hidden="false">
+              <img
+                class="render-image"
+                src="img/nuevas/renders-02-render-cocina-en-l-melamina-madera.webp"
+                alt="Render 3D de cocina en L con muebles de melamina en tono madera"
+                loading="lazy"
+              />
+              <figcaption class="render-caption">
+                Cocina en L
+                <p class="render-description">
+                  Melamina en tono madera y cubierta oscura.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="render-item" aria-hidden="true">
+              <img
+                class="render-image"
+                src="img/nuevas/renders-03-render-cocina-en-u-granito-negro-peninsula.webp"
+                alt="Render 3D de cocina en U con cubierta negra y península"
+                loading="lazy"
+              />
+              <figcaption class="render-caption">
+                Cocina en U
+                <p class="render-description">
+                  Distribución en U con península y cubierta negra.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="render-item" aria-hidden="true">
+              <img
+                class="render-image"
+                src="img/nuevas/renders-06-render-cocina-isla-central-piso-madera.webp"
+                alt="Render 3D de cocina con isla central, muebles de madera y piso de madera"
+                loading="lazy"
+              />
+              <figcaption class="render-caption">
+                Cocina con isla central
+                <p class="render-description">
+                  Muebles en tono madera con isla y piso de madera.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+          <div
+            class="render-controls"
+            role="group"
+            aria-label="Controles de visualizaciones"
+          >
+            <button
+              class="render-arrow"
+              type="button"
+              data-render-prev
+              aria-label="Visualización anterior"
+            >
+              ‹
+            </button>
+            <div
+              class="render-dots"
+              role="group"
+              aria-label="Elegir visualización"
+            >
+              <button
+                class="render-dot on"
+                type="button"
+                data-render-slide="0"
+                aria-label="Mostrar visualización 1"
+                aria-pressed="true"
+              ></button>
+              <button
+                class="render-dot"
+                type="button"
+                data-render-slide="1"
+                aria-label="Mostrar visualización 2"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="render-dot"
+                type="button"
+                data-render-slide="2"
+                aria-label="Mostrar visualización 3"
+                aria-pressed="false"
+              ></button>
+            </div>
+            <button
+              class="render-arrow"
+              type="button"
+              data-render-next
+              aria-label="Visualización siguiente"
+            >
+              ›
+            </button>
+          </div>
         </div>
       </div>
     </section>
