@@ -286,7 +286,14 @@ nav a:hover {
   color: #fff;
   text-align: center;
 }
-.strip div {
+.strip-track,
+.strip-group {
+  display: contents;
+}
+.strip-group[aria-hidden="true"] {
+  display: none;
+}
+.strip-group > div {
   padding: 26px 14px;
   letter-spacing: 0.04em;
   font-size: 13px;
@@ -885,6 +892,63 @@ footer {
   }
 }
 @media (max-width: 560px) {
+  .strip {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+  }
+  .strip-track {
+    display: flex;
+    width: max-content;
+    animation: strip-marquee 33s linear infinite;
+    will-change: transform;
+  }
+  .strip-group,
+  .strip-group[aria-hidden="true"] {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    padding-right: 32px;
+  }
+  .strip-group > div {
+    display: grid;
+    flex: 0 0 auto;
+    min-height: 64px;
+    place-items: center;
+    padding: 12px 0;
+    border: 0;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  @keyframes strip-marquee {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .strip-track {
+      animation: none;
+      transform: none;
+      will-change: auto;
+    }
+    .strip-group[aria-hidden="true"] {
+      display: none;
+    }
+    .strip {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .strip-group {
+      padding-right: 0;
+    }
+    .strip-group > div {
+      scroll-snap-align: start;
+    }
+  }
   #proceso {
     padding-top: 48px;
     padding-bottom: 48px;
@@ -1110,13 +1174,23 @@ footer {
 }
 .materiales-groups ul {
   margin: 12px 0 0;
-  padding-left: 20px;
-}
-.materiales-groups li::marker {
-  color: var(--g);
+  padding-left: 0;
+  list-style: none;
 }
 .materiales-groups li {
+  position: relative;
+  padding-left: 17px;
   margin-bottom: 14px;
+}
+.materiales-groups li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--g);
+  content: "";
 }
 .materiales-groups strong {
   color: var(--ink);
