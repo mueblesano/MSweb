@@ -331,6 +331,16 @@ section {
   height: 100%;
   min-height: 0;
 }
+@media (min-width: 901px) {
+  #nosotros .im {
+    position: relative;
+    overflow: hidden;
+  }
+  #nosotros .im img {
+    position: absolute;
+    inset: 0;
+  }
+}
 #nosotros .txt p {
   font-size: 16px;
 }

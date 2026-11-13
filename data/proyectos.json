@@ -118,18 +118,6 @@
       "foto": "img/proyectos/09-com.jpg"
     },
     {
-      "id": 10,
-      "nombre": "[Nombre del proyecto]",
-      "categoria": "esp",
-      "titulo": "Proyecto especial",
-      "alt": "Mueble esquinero",
-      "ubicacion": "[Comuna, si hay autorización]",
-      "fecha": "[Mes y año verificados]",
-      "descripcion": "[Necesidad del cliente y solución desarrollada]",
-      "materiales": "[Materiales confirmados]",
-      "foto": "img/proyectos/10-esp.jpg"
-    },
-    {
       "id": 11,
       "nombre": "[Nombre del proyecto]",
       "categoria": "clo",
