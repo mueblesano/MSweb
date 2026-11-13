@@ -331,6 +331,12 @@ section {
   height: 100%;
   min-height: 0;
 }
+#nosotros .txt p {
+  font-size: 16px;
+}
+#nosotros .txt .serif {
+  font-size: 16px;
+}
 .txt p {
   color: var(--mut);
 }
@@ -576,13 +582,13 @@ section {
 }
 .steps b {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0;
   display: block;
   margin: 8px 0;
 }
 .steps p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--mut);
   margin: 0;
   line-height: 1.6;
@@ -590,7 +596,7 @@ section {
 .steps i {
   font-style: normal;
   color: var(--g);
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.06em;
 }
 .hl {
@@ -967,11 +973,11 @@ footer {
   #proceso .steps b {
     display: inline;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
   }
   #proceso .steps p {
     margin-top: 3px;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.35;
   }
   .hero:after {
