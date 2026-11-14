@@ -3,7 +3,13 @@ const hd = document.getElementById('hd'), nv = document.getElementById('nv');
 const menuBtn = document.getElementById('menu');
 const closeBtn = document.getElementById('menu-close');
 const menuBackdrop = document.getElementById('menu-backdrop');
-addEventListener('scroll', () => hd.classList.toggle('s', scrollY > 40));
+function updateHeaderState() {
+  hd.classList.toggle(
+    's',
+    document.body.classList.contains('projects-view') || scrollY > 40,
+  );
+}
+addEventListener('scroll', updateHeaderState);
 function setMenuOpen(open) {
   nv.classList.toggle('on', open);
   document.body.classList.toggle('menu-open', open);
@@ -24,6 +30,7 @@ function updatePageView() {
   const categoryId = /^categoria-(coc|clo|com|ins|esp|ban)$/.test(hash) ? hash : '';
   const projectsOpen = hash === 'proyectos' || Boolean(categoryId);
   document.body.classList.toggle('projects-view', projectsOpen);
+  updateHeaderState();
   document.dispatchEvent(new CustomEvent('project:navigate', {
     detail: { categoryId }
   }));
