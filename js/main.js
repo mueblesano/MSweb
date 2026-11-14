@@ -126,8 +126,8 @@ restartRenderCarousel();
 
 const materialesSlides = [...document.querySelectorAll('.materiales-card')];
 const materialesCarousel = document.querySelector('.materiales-groups');
-const materialesButtons = [
-  ...document.querySelectorAll('[data-materiales-direction]'),
+const materialesPageButtons = [
+  ...document.querySelectorAll('[data-materiales-slide]'),
 ];
 const mobileMaterialesCarousel = window.matchMedia('(max-width: 900px)');
 let materialesScrollTimer;
@@ -169,20 +169,20 @@ function updateMaterialesAccessibility() {
       String(mobileMaterialesCarousel.matches && index !== activeIndex),
     );
   });
+  materialesPageButtons.forEach(button => {
+    const isActive = Number(button.dataset.materialesSlide) === activeIndex;
+    button.classList.toggle('on', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
 }
 
-materialesButtons.forEach(button => {
+materialesPageButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const activeIndex = getActiveMaterialesIndex();
-    const direction = Number(button.dataset.materialesDirection);
-    const nextIndex = Math.max(
-      0,
-      Math.min(materialesSlides.length - 1, activeIndex + direction),
-    );
+    const index = Number(button.dataset.materialesSlide);
     materialesCarousel.scrollTo({
       left:
         materialesCarousel.scrollLeft +
-        materialsSlideCenter(materialesSlides[nextIndex]) -
+        materialsSlideCenter(materialesSlides[index]) -
         (materialesCarousel.getBoundingClientRect().left +
           materialesCarousel.clientWidth / 2),
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
