@@ -452,8 +452,13 @@
           </p>
         </div>
         <h3 class="materiales-title">Materiales para cada parte del mueble</h3>
-        <div class="cols materiales-groups">
-          <div class="materiales-card">
+        <div
+          class="cols materiales-groups"
+          role="region"
+          aria-label="Materiales para cada parte del mueble"
+          aria-roledescription="carrusel"
+        >
+          <div class="materiales-card" aria-hidden="false">
             <h3>Estructura y puertas</h3>
             <ul>
               <li>
@@ -468,8 +473,16 @@
                 buscan calidez y vetas reales.
               </li>
             </ul>
+            <button
+              class="materiales-control materiales-next"
+              type="button"
+              data-materiales-direction="1"
+              aria-label="Ver la siguiente tarjeta de materiales"
+            >
+              Siguiente <span aria-hidden="true">→</span>
+            </button>
           </div>
-          <div class="materiales-card">
+          <div class="materiales-card" aria-hidden="false">
             <h3>Cubiertas</h3>
             <ul>
               <li>
@@ -486,8 +499,24 @@
                 mantenimiento más cuidadoso.
               </li>
             </ul>
+            <button
+              class="materiales-control materiales-previous"
+              type="button"
+              data-materiales-direction="-1"
+              aria-label="Ver la tarjeta anterior de materiales"
+            >
+              <span aria-hidden="true">←</span> Anterior
+            </button>
+            <button
+              class="materiales-control materiales-next"
+              type="button"
+              data-materiales-direction="1"
+              aria-label="Ver la siguiente tarjeta de materiales"
+            >
+              Siguiente <span aria-hidden="true">→</span>
+            </button>
           </div>
-          <div class="materiales-card">
+          <div class="materiales-card" aria-hidden="false">
             <h3>Componentes</h3>
             <ul>
               <li>
@@ -505,6 +534,14 @@
                 proteger de la humedad y los golpes.
               </li>
             </ul>
+            <button
+              class="materiales-control materiales-previous"
+              type="button"
+              data-materiales-direction="-1"
+              aria-label="Ver la tarjeta anterior de materiales"
+            >
+              <span aria-hidden="true">←</span> Anterior
+            </button>
           </div>
         </div>
         <div class="materiales-details">

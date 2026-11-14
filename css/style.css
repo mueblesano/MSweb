@@ -1276,12 +1276,14 @@ footer {
   text-align: center;
 }
 .tech .materiales-groups {
+  position: relative;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   max-width: 1200px;
   margin-top: 24px;
 }
 .materiales-card {
+  position: relative;
   padding: 26px 24px 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1337,11 +1339,93 @@ footer {
 }
 @media (max-width: 900px) {
   .tech .materiales-groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 24px;
+    max-width: 900px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+  }
+  .materiales-card {
+    flex: 0 0 100%;
+    margin-inline: 0;
+    padding-inline: 18px;
+    padding-bottom: 68px;
+    scroll-snap-align: center;
+  }
+  .materiales-groups::-webkit-scrollbar {
+    display: none;
+  }
+  .tech .materiales-control {
+    position: absolute;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--mut);
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .tech .materiales-next {
+    right: 18px;
+  }
+  .tech .materiales-previous {
+    left: 18px;
+  }
+  .materiales-control span {
+    color: var(--g);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .materiales-next span {
+    animation: materiales-next-nudge 1.4s ease-in-out infinite;
+  }
+  .materiales-previous span {
+    animation: materiales-previous-nudge 1.4s ease-in-out infinite;
+  }
+  .materiales-control:focus-visible {
+    outline: 2px solid var(--g);
+    outline-offset: 3px;
+  }
+  .materiales-control:hover {
+    border-color: var(--g);
+    color: var(--ink);
   }
 }
-@media (max-width: 560px) {
-  .tech .materiales-groups {
-    grid-template-columns: 1fr;
+.materiales-control {
+  display: none;
+}
+@keyframes materiales-next-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+@keyframes materiales-previous-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .materiales-groups {
+    scroll-behavior: auto;
+  }
+  .materiales-control span {
+    animation: none;
   }
 }

@@ -123,3 +123,84 @@ renderSlideButtons.forEach((button, index) => {
 });
 mobileRenderCarousel.addEventListener('change', restartRenderCarousel);
 restartRenderCarousel();
+
+const materialesSlides = [...document.querySelectorAll('.materiales-card')];
+const materialesCarousel = document.querySelector('.materiales-groups');
+const materialesButtons = [
+  ...document.querySelectorAll('[data-materiales-direction]'),
+];
+const mobileMaterialesCarousel = window.matchMedia('(max-width: 900px)');
+let materialesScrollTimer;
+
+function getActiveMaterialesIndex() {
+  const carouselCenter =
+    materialesCarousel.getBoundingClientRect().left +
+    materialesCarousel.clientWidth / 2;
+
+  return materialesSlides.reduce(
+    (closestIndex, slide, index) =>
+      Math.abs(
+        slide.getBoundingClientRect().left +
+          slide.getBoundingClientRect().width / 2 -
+          carouselCenter,
+      ) <
+      Math.abs(
+        materialsSlideCenter(materialesSlides[closestIndex]) - carouselCenter,
+      )
+        ? index
+        : closestIndex,
+    0,
+  );
+}
+
+function materialsSlideCenter(slide) {
+  const bounds = slide.getBoundingClientRect();
+  return bounds.left + bounds.width / 2;
+}
+
+function updateMaterialesAccessibility() {
+  const activeIndex = mobileMaterialesCarousel.matches
+    ? getActiveMaterialesIndex()
+    : 0;
+
+  materialesSlides.forEach((slide, index) => {
+    slide.setAttribute(
+      'aria-hidden',
+      String(mobileMaterialesCarousel.matches && index !== activeIndex),
+    );
+  });
+}
+
+materialesButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const activeIndex = getActiveMaterialesIndex();
+    const direction = Number(button.dataset.materialesDirection);
+    const nextIndex = Math.max(
+      0,
+      Math.min(materialesSlides.length - 1, activeIndex + direction),
+    );
+    materialesCarousel.scrollTo({
+      left:
+        materialesCarousel.scrollLeft +
+        materialsSlideCenter(materialesSlides[nextIndex]) -
+        (materialesCarousel.getBoundingClientRect().left +
+          materialesCarousel.clientWidth / 2),
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+    });
+  });
+});
+
+materialesCarousel.addEventListener('scroll', () => {
+  clearTimeout(materialesScrollTimer);
+  materialesScrollTimer = setTimeout(() => {
+    updateMaterialesAccessibility();
+  }, 150);
+});
+
+mobileMaterialesCarousel.addEventListener(
+  'change',
+  updateMaterialesAccessibility,
+);
+updateMaterialesAccessibility();
