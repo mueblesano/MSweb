@@ -3,13 +3,26 @@ const hd = document.getElementById('hd'), nv = document.getElementById('nv');
 const menuBtn = document.getElementById('menu');
 const closeBtn = document.getElementById('menu-close');
 const menuBackdrop = document.getElementById('menu-backdrop');
+const backToTopButton = document.querySelector('.back-to-top');
 function updateHeaderState() {
   hd.classList.toggle(
     's',
     document.body.classList.contains('projects-view') || scrollY > 40,
   );
 }
-addEventListener('scroll', updateHeaderState);
+function updateScrollControls() {
+  updateHeaderState();
+  backToTopButton.classList.toggle('on', scrollY > 200);
+}
+addEventListener('scroll', updateScrollControls);
+backToTopButton.addEventListener('click', () => {
+  scrollTo({
+    top: 0,
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? 'instant'
+      : 'smooth',
+  });
+});
 function setMenuOpen(open) {
   nv.classList.toggle('on', open);
   document.body.classList.toggle('menu-open', open);
@@ -30,7 +43,7 @@ function updatePageView() {
   const categoryId = /^categoria-(coc|clo|com|ins|esp|ban)$/.test(hash) ? hash : '';
   const projectsOpen = hash === 'proyectos' || Boolean(categoryId);
   document.body.classList.toggle('projects-view', projectsOpen);
-  updateHeaderState();
+  updateScrollControls();
   document.dispatchEvent(new CustomEvent('project:navigate', {
     detail: { categoryId }
   }));
