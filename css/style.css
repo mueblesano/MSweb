@@ -1330,7 +1330,8 @@ footer {
 }
 .materiales-card {
   position: relative;
-  padding: 26px 24px 18px;
+  --materiales-card-padding-x: 24px;
+  padding: 26px var(--materiales-card-padding-x) 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--soft);
@@ -1339,10 +1340,11 @@ footer {
   text-align: left;
 }
 .tech .materiales-card-image {
-  width: 100%;
+  width: calc(100% + 2 * (var(--materiales-card-padding-x) + 1px));
+  max-width: none;
   height: 160px;
-  margin: 0 0 18px;
-  border-radius: 4px;
+  margin: -27px calc(-1 * (var(--materiales-card-padding-x) + 1px)) 18px;
+  border-radius: 8px 8px 0 0;
   object-fit: cover;
 }
 .tech .materiales-card h3 {
@@ -1405,7 +1407,7 @@ footer {
   .materiales-card {
     flex: 0 0 100%;
     margin-inline: 0;
-    padding-inline: 18px;
+    --materiales-card-padding-x: 18px;
     padding-bottom: 68px;
     scroll-snap-align: center;
   }
